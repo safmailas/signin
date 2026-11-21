@@ -105,5 +105,7 @@ server or a log; read it in the browser, then clear it.
 
 ## Files
 
-`index.html`, `app.js`, `style.css`, `config.json`, `LICENSE`, `.nojekyll`. Works on any static host (GitHub Pages,
+`index.html`, `app.js`, `style.css`, `config.json`, `privacy.html` (the privacy policy Google links to), `LICENSE`, `.nojekyll`.
+Opened without `?app=`, `index.html` says what the page is for and links to the app, so it also serves as the home page
+listed in Google Cloud. Works on any static host (GitHub Pages,
 Cloudflare Pages, Netlify); add that host's origin in Google Cloud if you move it.

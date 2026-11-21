@@ -89,10 +89,24 @@
 
   /* ---------- Start ---------- */
 
+  // Opened on its own (for example as the home page): say what the page is for and link to the apps it serves.
+  function about(apps) {
+    apps = apps && typeof apps === 'object' ? apps : {};
+    var list = Object.keys(apps).filter(function (k) { return APP_RE.test(k) && apps[k] && typeof apps[k] === 'object'; })
+      .map(function (k) { return { name: String(apps[k].name || k), pick: pickReturn(apps[k].returnUrls, null) }; });
+    var names = list.map(function (a) { return a.name; });
+    setText('title', 'Sign in with Google');
+    setText('lead', (names.length ? 'Staff use this page to sign in to ' + names.join(' and ') + ' with their Google account.'
+      : 'Apps send staff here to sign in with their Google account.') + ' Start from your app’s sign-in screen.');
+    show('lead', true);
+    var first = list.filter(function (a) { return a.pick.url; })[0];
+    if (first) backLink(first.pick.url, 'Open ' + first.name);
+  }
+
   function start(cfg) {
     cfg = cfg && typeof cfg === 'object' ? cfg : {};
     var appKey = String(q.get('app') || '');
-    if (!appKey) { stop('Sign in', 'Open this page from your app’s sign-in screen.', '', true); return; }
+    if (!appKey) { about(cfg.apps); return; }
 
     var apps = cfg.apps && typeof cfg.apps === 'object' ? cfg.apps : {};
     var app = APP_RE.test(appKey) && Object.prototype.hasOwnProperty.call(apps, appKey) ? apps[appKey] : null;
