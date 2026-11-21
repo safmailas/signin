@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; frame-src https://accounts.google.com/gsi/; connect-src 'self' https://accounts.google.com/gsi/; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<title>Sign in</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<main class="card">
+  <h1 id="title">Sign in</h1>
+  <p id="lead" class="lead">Loading…</p>
+  <div id="gbtn" class="gbtn" hidden></div>
+  <div id="status" class="note" role="status" aria-live="polite" hidden></div>
+  <p id="fine" class="fine" hidden></p>
+  <p id="back" class="back" hidden><a id="backlink" href="./">Back</a></p>
+</main>
+<noscript><p class="nojs">This page needs JavaScript to sign you in.</p></noscript>
+</body>
+</html>
