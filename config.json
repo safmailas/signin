@@ -1,10 +1,11 @@
 {
   "googleClientId": "641812266725-97ok1ico1r5hl900dvu6r3foocd1ct95.apps.googleusercontent.com",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "apps": {
     "vh": {
       "name": "Volunteer Hub",
       "returnUrls": [
+        "https://safmailas.github.io/vh/v43/app/",
         "https://safmailas.github.io/vh/v42/app/",
         "https://safmailas.github.io/vh/v41/app/"
       ]
